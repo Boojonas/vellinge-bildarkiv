@@ -7,14 +7,17 @@ kontrollera om en bild redan finns inlagd innan den katalogiseras.
 
 - `vellinge_bildhashar.csv` – en rad per bild: `bildnr`, `dhash`, `phash`, `width`, `height`.
 - `jamfor_vellinge.py` – jämför en eller flera bilder mot hashfilen.
+- `kyrkbyar_bildhashar.csv` – hashar för de 1 678 fotografierna i boken *Kyrkbyar och städer i förvandling* (Vellinge kommun 1981): bild-id (KB-sida-löpnummer), sida, by, registrets löpnummer, fastighetsbeteckning (1981) och bildtext, `dhash`, `phash`. Kartor och ritningar är inte med.
+- `jamfor_kyrkbyar.py` – jämför en eller flera bilder mot bokens fotografier. Provar även centrerade utsnitt och inverterad bild.
 
-Filen innehåller bara bildnummer och hashar, inga titlar, beskrivningar eller bilder.
+`vellinge_bildhashar.csv` innehåller bara bildnummer och hashar, inga titlar, beskrivningar eller bilder. Bokens hashfil innehåller uppgifter som står tryckta i boken, men inga namn ur registret.
 
 ## Användning
 
 ```
 git clone https://github.com/Boojonas/vellinge-bildarkiv
 python3 vellinge-bildarkiv/jamfor_vellinge.py ny_bild.jpg [fler_bilder.jpg ...]
+python3 vellinge-bildarkiv/jamfor_kyrkbyar.py ny_bild.jpg [fler_bilder.jpg ...]
 ```
 
 Kräver Pillow (`pip install pillow`).
